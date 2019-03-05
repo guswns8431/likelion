@@ -14,6 +14,9 @@ def detail(request,blog_id):
 def new(request):
     return render(request,'new.html')
 
+def introduce(request):
+    return render(request,'mainapp/introduce.html')
+
 def create(request):
     blog=Blog()
     blog.title=request.GET['title']

@@ -23,6 +23,7 @@ urlpatterns = [
     path('blog/<int:blog_id>',blog.views.detail, name="detail"),
     path('blog/new/',blog.views.new,name="new"),
     path('blog/create',blog.views.create,name="create"),
+    path('introduce',blog.views.introduce,name="introduce"),
 ]
 ##path('blog/create/',blog.views.create,name="create"),
 
