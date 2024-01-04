@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%block contents %}
+<body>
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Hack Your Life</h1>
+      <p>멋쟁이 사자처럼 2번째 과제입니다. 소소한 기능추가와 부트스트랩에 익숙해지기 위하여 디자인에 신경을 조금 더 써보았습니다.<br>
+      디테일에서 home으로 돌아가는 기능 구현<br>
+      부트스트랩 무료테마를 이용한 처음화면 구성</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+    {% for blog in blogs.all %}
+      <div class="col-md-4">
+        
+        <h1> 제목 : {{blog.title}} </h1>
+        <p> 날짜 : {{blog.pub_date}} </p>
+        <p> 본문 미리보기 : {{blog.summary}}</p>
+        <p><a class="btn btn-secondary" href="{%url 'detail' blog.id%}" role="button">View details &raquo;</a></p>
+        <br><br>
+      </div>
+    {%endfor%}
+      
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p>&copy; Company 2017-2019</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>
+</body>
+{%endblock%}
+
